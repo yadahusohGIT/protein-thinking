@@ -56,7 +56,7 @@ def build() -> Path:
             "- Prices are illustrative Dutch retail assumptions, not a live supermarket feed.\n"
             "- Nutrition values are representative product-label values.\n"
             "- Nutrition constraints apply to the weekly average; the daily schedule is illustrative.\n"
-            "- The model is a portfolio demonstration, not dietary or medical advice."
+            "- The outputs describe this model setup; they are not dietary or medical advice."
         ),
         nbf.v4.new_markdown_cell("## Data"),
         nbf.v4.new_code_cell(
@@ -129,9 +129,9 @@ def build() -> Path:
         ),
     ]
 
-    # The normal route is nbclient. This workspace blocks the local sockets a
-    # Jupyter kernel requires, so the repository also carries an in-process
-    # fallback that runs the exact same cells sequentially and embeds outputs.
+    # Use a normal Jupyter kernel when available. The fallback executes the same
+    # cells in order, which also allows the notebook to be rebuilt in restricted
+    # environments where a kernel cannot start.
     try:
         client = NotebookClient(
             notebook,

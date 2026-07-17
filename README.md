@@ -6,7 +6,7 @@ The model answers this question:
 
 > What is the cheapest weekly food basket that meets a set of nutrition, variety and cooking-time constraints?
 
-My previous project compared Maastricht neighbourhoods using a scoring model. For this one, I wanted to do something different and use mixed-integer programming.
+I wanted to see how mixed-integer programming could handle the trade-off between cost, nutrition and convenience.
 
 ![Weekly basket cost by scenario](assets/scenario_costs.svg)
 
@@ -103,4 +103,3 @@ The pipeline also creates `data/processed/protein_thinking.db`, which can be use
 - Package sizes and discounts are not included.
 
 A useful next step would be collecting dated prices and nutrition labels for a smaller set of real products from Dutch supermarkets.
-

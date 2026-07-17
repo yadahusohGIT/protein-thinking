@@ -1,4 +1,4 @@
--- Protein Thinking analytical questions
+-- Queries used to check the main results and explore the model output.
 -- Run against data/processed/protein_thinking.db after `python -m src.run_analysis`.
 
 -- 1. Which scenario has the lowest weekly cost and what trade-offs does it make?
@@ -64,4 +64,3 @@ FROM meal_plan
 WHERE scenario = 'balanced'
 GROUP BY category
 ORDER BY weekly_cost_eur DESC;
-

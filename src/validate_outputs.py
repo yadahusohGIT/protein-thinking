@@ -1,4 +1,4 @@
-"""Validate generated analytical outputs before portfolio publication."""
+"""Check the generated outputs before they are shared or reused."""
 
 from __future__ import annotations
 
@@ -49,4 +49,3 @@ if __name__ == "__main__":
     print(f"{len(passed)} validation checks passed")
     for item in passed:
         print(f"- {item}")
-

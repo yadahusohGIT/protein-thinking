@@ -4,7 +4,7 @@
 
 I first tried treating every food on every day as one large cost-minimisation problem. It worked, but there were many nearly identical solutions because the days could be swapped without changing the shopping cost.
 
-I therefore separated the purchasing decision from the daily schedule:
+So I separated the purchasing decision from the daily schedule:
 
 1. find the cheapest weekly basket;
 2. keep that basket fixed and spread it across seven days.
@@ -106,4 +106,3 @@ The validation script and tests check that:
 ## What the model leaves out
 
 It does not include live prices, discounts, package sizes, recipes, allergies, taste or food waste. Those would all matter before using it as an actual shopping tool.
-

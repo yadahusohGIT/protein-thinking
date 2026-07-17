@@ -1,4 +1,4 @@
-"""Create lightweight SVG figures for GitHub and LinkedIn previews."""
+"""Create the summary charts used in the README."""
 
 from __future__ import annotations
 

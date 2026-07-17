@@ -1,4 +1,4 @@
-"""Run every portfolio scenario and materialise reproducible outputs."""
+"""Run each model scenario and save the resulting tables."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ PROCESSED = ROOT / "data" / "processed"
 
 
 def run() -> dict[str, pd.DataFrame]:
-    """Solve the main scenarios, sensitivity frontier and SQLite analytical layer."""
+    """Solve the scenarios and write the CSV and SQLite outputs."""
 
     PROCESSED.mkdir(parents=True, exist_ok=True)
     catalog = load_catalog(RAW_CATALOG)
@@ -27,6 +27,8 @@ def run() -> dict[str, pd.DataFrame]:
     daily = pd.concat([item["daily"] for item in solved], ignore_index=True)
     summary = pd.DataFrame([item["summary"] for item in solved])
 
+    # Change only the protein floor here so the cost differences can be
+    # attributed to that constraint rather than to a different model setup.
     frontier_rows = []
     for scenario in protein_frontier_scenarios():
         output = optimise_meal_plan(catalog, scenario)
@@ -43,6 +45,8 @@ def run() -> dict[str, pd.DataFrame]:
         frontier["weekly_cost_eur"] - frontier["weekly_cost_eur"].iloc[0]
     ).round(2)
 
+    # The optimiser returns daily rows. Summing them gives the quantities that
+    # would need to be purchased for the full week.
     grocery = (
         plan.groupby(["scenario", "scenario_label", "food_id", "food_name", "category"], as_index=False)
         .agg(servings=("servings", "sum"), weekly_cost_eur=("cost_eur", "sum"))
@@ -77,4 +81,3 @@ if __name__ == "__main__":
         generated["scenario_summary"][["scenario_label", "weekly_cost_eur", "average_protein_g"]]
         .to_string(index=False)
     )
-

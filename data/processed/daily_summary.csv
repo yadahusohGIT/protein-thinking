@@ -1,0 +1,29 @@
+scenario,scenario_label,day_number,day,cost_eur,kcal,protein_g,carbs_g,fat_g,fibre_g,prep_minutes,distinct_foods
+balanced,Balanced,1,Monday,6.99,2504.0,159.1,349.2,49.0,30.900000000000002,52.0,8
+balanced,Balanced,2,Tuesday,6.24,2209.0,158.8,247.7,58.2,37.1,47.0,10
+balanced,Balanced,3,Wednesday,5.83,2542.0,158.5,297.8,76.7,33.3,67.0,9
+balanced,Balanced,4,Thursday,6.11,2408.0,160.5,275.8,70.3,31.3,59.0,8
+balanced,Balanced,5,Friday,6.48,2419.0,162.5,282.6,69.2,39.6,49.0,10
+balanced,Balanced,6,Saturday,6.45,2314.0,161.0,286.4,53.4,40.2,57.0,8
+balanced,Balanced,7,Sunday,6.27,2442.0,160.6,343.2,46.300000000000004,35.5,54.0,9
+budget,Budget cut,1,Monday,6.5200000000000005,2339.0,152.8,308.7,51.9,29.1,54.0,11
+budget,Budget cut,2,Tuesday,5.9799999999999995,2306.0,150.3,292.7,55.4,27.9,54.0,8
+budget,Budget cut,3,Wednesday,5.49,2304.0,144.8,275.1,68.3,28.799999999999997,59.0,9
+budget,Budget cut,4,Thursday,5.93,2419.0,154.1,350.2,42.699999999999996,27.299999999999997,66.0,9
+budget,Budget cut,5,Friday,5.7700000000000005,2303.0,148.0,320.6,44.2,27.4,57.0,9
+budget,Budget cut,6,Saturday,5.63,2381.0,150.5,301.6,61.1,28.7,64.0,9
+budget,Budget cut,7,Sunday,5.74,2291.0,149.8,282.9,61.7,28.1,56.0,11
+high_protein,High protein,1,Monday,7.63,2765.0,190.5,309.6,78.6,40.6,48.0,11
+high_protein,High protein,2,Tuesday,7.77,2615.0,199.0,270.8,75.0,37.1,56.0,11
+high_protein,High protein,3,Wednesday,7.06,2592.0,188.8,374.5,35.1,35.5,58.0,9
+high_protein,High protein,4,Thursday,7.02,2478.0,188.3,301.9,53.2,31.599999999999998,67.0,11
+high_protein,High protein,5,Friday,7.65,2594.0,187.8,309.1,65.0,30.8,62.0,11
+high_protein,High protein,6,Saturday,7.56,2758.0,187.5,354.4,58.3,40.3,63.0,10
+high_protein,High protein,7,Sunday,7.069999999999999,2553.0,188.1,301.2,64.3,31.3,63.0,10
+convenience,Convenience,1,Monday,7.3,2233.0,154.5,232.2,75.2,30.9,41.0,10
+convenience,Convenience,2,Tuesday,6.5,2276.0,160.4,246.6,72.7,30.3,36.0,9
+convenience,Convenience,3,Wednesday,6.69,2206.0,151.5,212.6,78.5,51.3,32.0,9
+convenience,Convenience,4,Thursday,7.3100000000000005,2390.0,161.7,262.7,75.1,54.2,28.0,10
+convenience,Convenience,5,Friday,6.8,2323.0,156.1,265.6,68.0,37.1,47.0,10
+convenience,Convenience,6,Saturday,7.2,2421.0,160.5,275.0,70.1,72.9,30.0,10
+convenience,Convenience,7,Sunday,7.8,2271.0,178.2,214.4,73.5,39.5,31.0,10

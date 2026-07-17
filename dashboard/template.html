@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protein Thinking: a cost-constrained student meal-planning optimiser built with mixed-integer programming.">
+  <title>Protein Thinking — Meal-planning optimiser</title>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #657169;
+      --paper: #f4f1e9;
+      --card: #fffdf8;
+      --line: #ded9cc;
+      --green: #254f3d;
+      --green-mid: #4d7a62;
+      --green-soft: #dbe7de;
+      --gold: #d9a441;
+      --orange: #c86c3a;
+      --shadow: 0 18px 48px rgba(31, 45, 36, .08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    .brand { font-weight: 800; letter-spacing: -.03em; }
+    .topbar a { font-size: .9rem; text-decoration: none; color: var(--muted); }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(44px, 7vw, 88px);
+      color: #f8f6ef;
+      background: var(--green);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      right: -130px;
+      top: -180px;
+      border: 70px solid rgba(217, 164, 65, .42);
+      border-radius: 50%;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 800; color: var(--gold); }
+    h1 { max-width: 780px; margin: 14px 0 18px; font-size: clamp(2.6rem, 7vw, 5.6rem); line-height: .96; letter-spacing: -.065em; }
+    .hero p { max-width: 690px; margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(248, 246, 239, .78); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .pill { padding: 9px 13px; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; font-size: .82rem; }
+    .notice { margin: 22px 0 36px; padding: 16px 18px; border: 1px solid #e8cf9d; background: #fff6df; border-radius: 14px; color: #5f4b27; font-size: .9rem; }
+    .section-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin: 54px 0 20px; }
+    .section-head h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.25rem); letter-spacing: -.04em; }
+    .section-head p { max-width: 560px; margin: 0; color: var(--muted); }
+    .scenario-tabs { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 22px; }
+    .scenario-tabs button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.48);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font: inherit;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .scenario-tabs button[aria-selected="true"] { background: var(--green); color: white; border-color: var(--green); }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card { background: var(--card); border: 1px solid rgba(222,217,204,.8); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .kpi { padding: 22px; min-height: 142px; }
+    .kpi .label { color: var(--muted); font-size: .82rem; }
+    .kpi .value { margin: 8px 0 3px; font-size: clamp(1.8rem, 4vw, 2.65rem); font-weight: 800; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+    .kpi .context { color: var(--green-mid); font-size: .8rem; }
+    .grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    .panel { padding: 25px; min-width: 0; }
+    .panel h3 { margin: 0 0 5px; font-size: 1.1rem; letter-spacing: -.02em; }
+    .panel .subtitle { margin: 0 0 22px; color: var(--muted); font-size: .82rem; }
+    .bar-row { display: grid; grid-template-columns: 110px 1fr 58px; align-items: center; gap: 10px; margin: 14px 0; font-size: .82rem; }
+    .bar-track { height: 12px; overflow: hidden; border-radius: 999px; background: #ece8de; }
+    .bar-fill { height: 100%; border-radius: inherit; background: var(--green-mid); transition: width .3s ease; }
+    .bar-row.active .bar-fill { background: var(--gold); }
+    .bar-value { text-align: right; font-variant-numeric: tabular-nums; font-weight: 750; }
+    #frontier-chart { width: 100%; height: 255px; overflow: visible; }
+    .axis { stroke: #cfc9ba; stroke-width: 1; }
+    .gridline { stroke: #e7e2d8; stroke-width: 1; }
+    .frontier-line { fill: none; stroke: var(--green); stroke-width: 3; }
+    .frontier-dot { fill: var(--card); stroke: var(--green); stroke-width: 2.5; }
+    .frontier-dot.active { fill: var(--gold); stroke: var(--green); }
+    .axis-label { fill: var(--muted); font-size: 11px; }
+    .nutrition-list { display: grid; gap: 16px; }
+    .metric-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: .84rem; }
+    .metric-top strong { font-variant-numeric: tabular-nums; }
+    .progress { height: 10px; background: #ece8de; border-radius: 999px; overflow: hidden; }
+    .progress > div { height: 100%; background: var(--green-mid); border-radius: inherit; }
+    .schedule { display: grid; grid-template-columns: repeat(7, minmax(210px, 1fr)); gap: 12px; overflow-x: auto; padding: 2px 2px 14px; }
+    .day-card { min-width: 210px; padding: 18px; }
+    .day-card h3 { margin: 0; font-size: 1rem; }
+    .day-stats { margin: 3px 0 15px; color: var(--muted); font-size: .76rem; }
+    .meal-group { padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--line); }
+    .meal-group:first-of-type { border-top: 0; }
+    .meal-label { margin-bottom: 5px; text-transform: uppercase; letter-spacing: .1em; font-size: .63rem; font-weight: 800; color: var(--green-mid); }
+    .food { margin: 3px 0; font-size: .78rem; }
+    .food span { color: var(--muted); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 62px; }
+    .method { padding: 22px; }
+    .method strong { display: block; margin-bottom: 7px; }
+    .method p { margin: 0; color: var(--muted); font-size: .86rem; }
+    footer { padding: 28px 0 48px; color: var(--muted); border-top: 1px solid var(--line); font-size: .82rem; }
+    @media (max-width: 850px) {
+      .kpis { grid-template-columns: 1fr 1fr; }
+      .grid-two, .method-grid { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 8px; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 20px, 1180px); }
+      .hero { padding: 36px 24px; border-radius: 24px; }
+      .kpis { grid-template-columns: 1fr; }
+      .panel { padding: 20px; }
+      .bar-row { grid-template-columns: 90px 1fr 52px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <div class="brand">Protein Thinking</div>
+    <a href="https://github.com/yadahusohGIT/protein-thinking">View repository ↗</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Business Analytics · Operations Research</div>
+      <h1>How expensive is a protein target?</h1>
+      <p>A two-stage mixed-integer model finds the lowest-cost weekly grocery basket, then turns that basket into a practical seven-day schedule.</p>
+      <div class="hero-meta">
+        <span class="pill">Python + SciPy MILP</span>
+        <span class="pill">29 food options</span>
+        <span class="pill">4 decision scenarios</span>
+        <span class="pill">SQL analytical layer</span>
+      </div>
+    </section>
+
+    <div class="notice"><strong>Portfolio-model assumption:</strong> prices are a versioned illustrative Dutch retail catalogue, not a live supermarket feed. Nutrition values are typical label values. Replace both before making a real purchasing or health decision.</div>
+
+    <section aria-labelledby="decision-title">
+      <div class="section-head">
+        <div><div class="eyebrow">Decision view</div><h2 id="decision-title">Compare planning priorities</h2></div>
+        <p id="scenario-description"></p>
+      </div>
+      <div class="scenario-tabs" id="scenario-tabs" role="tablist" aria-label="Meal-plan scenario"></div>
+      <div class="kpis">
+        <article class="card kpi"><div class="label">Illustrative weekly cost</div><div class="value" id="kpi-cost">—</div><div class="context" id="kpi-cost-context"></div></article>
+        <article class="card kpi"><div class="label">Average protein</div><div class="value" id="kpi-protein">—</div><div class="context" id="kpi-protein-context"></div></article>
+        <article class="card kpi"><div class="label">Average preparation</div><div class="value" id="kpi-prep">—</div><div class="context" id="kpi-prep-context"></div></article>
+        <article class="card kpi"><div class="label">Weekly variety</div><div class="value" id="kpi-variety">—</div><div class="context">distinct foods selected</div></article>
+      </div>
+
+      <div class="grid-two">
+        <article class="card panel">
+          <h3>Weekly cost by scenario</h3>
+          <p class="subtitle">Illustrative euros per seven-day basket</p>
+          <div id="cost-bars" role="img" aria-label="Weekly cost comparison across planning scenarios"></div>
+        </article>
+        <article class="card panel">
+          <h3>Protein-cost sensitivity</h3>
+          <p class="subtitle">Minimum weekly basket cost as the protein floor rises from 130 g to 210 g per day</p>
+          <svg id="frontier-chart" role="img" aria-label="Weekly cost by daily protein floor"></svg>
+        </article>
+      </div>
+
+      <div class="grid-two">
+        <article class="card panel">
+          <h3>Average nutrition and effort</h3>
+          <p class="subtitle">Weekly totals divided by seven; targets are model constraints, not personal recommendations</p>
+          <div class="nutrition-list" id="nutrition-list"></div>
+        </article>
+        <article class="card panel">
+          <h3>What changes in this scenario?</h3>
+          <p class="subtitle">Decision implication relative to the balanced baseline</p>
+          <div id="scenario-insight"></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="schedule-title">
+      <div class="section-head">
+        <div><div class="eyebrow">Stage 2</div><h2 id="schedule-title">Illustrative weekly schedule</h2></div>
+        <p>The scheduler keeps the optimised basket fixed and reduces day-to-day variation. Nutritional constraints are assessed on the weekly average.</p>
+      </div>
+      <div class="schedule" id="schedule"></div>
+    </section>
+
+    <section aria-labelledby="grocery-title">
+      <div class="section-head">
+        <div><div class="eyebrow">Basket output</div><h2 id="grocery-title">Grocery list</h2></div>
+        <p>Foods are ranked by their contribution to weekly cost, making the model's purchasing logic easy to audit.</p>
+      </div>
+      <article class="card panel table-wrap">
+        <table>
+          <thead><tr><th>Food</th><th>Category</th><th class="num">Servings</th><th class="num">Weekly cost</th><th class="num">Cost share</th></tr></thead>
+          <tbody id="grocery-body"></tbody>
+        </table>
+      </article>
+    </section>
+
+    <section aria-labelledby="method-title">
+      <div class="section-head"><div><div class="eyebrow">Method</div><h2 id="method-title">A transparent two-stage model</h2></div></div>
+      <div class="method-grid">
+        <article class="card method"><strong>1 · Optimise the basket</strong><p>Integer serving counts minimise weekly cost subject to energy, protein, fibre, fat, food-variety and frequency constraints.</p></article>
+        <article class="card method"><strong>2 · Schedule the basket</strong><p>A second integer model fixes the grocery basket and minimises daily deviation across nutrition and preparation time.</p></article>
+        <article class="card method"><strong>3 · Stress-test the decision</strong><p>Four scenarios and a nine-point protein frontier show how tighter constraints change cost, food mix and convenience.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell">Built as a Business Analytics portfolio case study. Not dietary or medical advice.</div></footer>
+
+  <script>
+    const DATA = __PROTEIN_THINKING_DATA__;
+    const euro = new Intl.NumberFormat('en-IE', {style:'currency', currency:'EUR'});
+    const slots = ['breakfast','lunch','dinner','snack'];
+    let active = 'balanced';
+
+    function summary(key) { return DATA.summary.find(d => d.scenario === key); }
+    function fmt(value, digits=0) { return Number(value).toFixed(digits); }
+
+    function setupTabs() {
+      const tabs = document.getElementById('scenario-tabs');
+      DATA.summary.forEach(item => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.role = 'tab';
+        button.textContent = item.scenario_label;
+        button.dataset.key = item.scenario;
+        button.addEventListener('click', () => { active = item.scenario; render(); });
+        tabs.appendChild(button);
+      });
+    }
+
+    function renderCostBars() {
+      const max = Math.max(...DATA.summary.map(d => d.weekly_cost_eur));
+      document.getElementById('cost-bars').innerHTML = DATA.summary.map(d => `
+        <div class="bar-row ${d.scenario === active ? 'active' : ''}">
+          <span>${d.scenario_label}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${(d.weekly_cost_eur/max)*100}%"></div></div>
+          <span class="bar-value">€${fmt(d.weekly_cost_eur,2)}</span>
+        </div>`).join('');
+    }
+
+    function renderFrontier() {
+      const svg = document.getElementById('frontier-chart');
+      const width = 520, height = 255, left = 52, right = 18, top = 12, bottom = 38;
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      const xMin = 130, xMax = 210;
+      const yMin = Math.floor(Math.min(...DATA.frontier.map(d => d.weekly_cost_eur))/5)*5;
+      const yMax = Math.ceil(Math.max(...DATA.frontier.map(d => d.weekly_cost_eur))/5)*5;
+      const x = v => left + (v-xMin)/(xMax-xMin)*(width-left-right);
+      const y = v => height-bottom - (v-yMin)/(yMax-yMin)*(height-top-bottom);
+      let html = '';
+      for (let value=yMin; value<=yMax; value+=5) {
+        html += `<line class="gridline" x1="${left}" y1="${y(value)}" x2="${width-right}" y2="${y(value)}"/><text class="axis-label" x="${left-9}" y="${y(value)+4}" text-anchor="end">€${value}</text>`;
+      }
+      [130,150,170,190,210].forEach(value => {
+        html += `<text class="axis-label" x="${x(value)}" y="${height-12}" text-anchor="middle">${value} g</text>`;
+      });
+      html += `<line class="axis" x1="${left}" y1="${height-bottom}" x2="${width-right}" y2="${height-bottom}"/>`;
+      html += `<path class="frontier-line" d="${DATA.frontier.map((d,i) => `${i?'L':'M'} ${x(d.protein_floor_g)} ${y(d.weekly_cost_eur)}`).join(' ')}"/>`;
+      DATA.frontier.forEach(d => {
+        html += `<circle class="frontier-dot ${Math.round(d.protein_floor_g) === Math.round(summary(active).target_protein_min_g) ? 'active':''}" cx="${x(d.protein_floor_g)}" cy="${y(d.weekly_cost_eur)}" r="5"><title>${d.protein_floor_g} g: €${fmt(d.weekly_cost_eur,2)}</title></circle>`;
+      });
+      svg.innerHTML = html;
+    }
+
+    function renderNutrition(item) {
+      const metrics = [
+        ['Calories', item.average_kcal, item.target_calorie_target, 'kcal'],
+        ['Protein', item.average_protein_g, item.target_protein_min_g, 'g minimum'],
+        ['Fibre', item.average_fibre_g, item.target_fibre_min_g, 'g minimum'],
+        ['Preparation', item.average_prep_minutes, item.target_max_prep_minutes, 'min maximum']
+      ];
+      document.getElementById('nutrition-list').innerHTML = metrics.map(([label,value,target,unit]) => {
+        const pct = Math.min(100, value/target*100);
+        return `<div><div class="metric-top"><span>${label}</span><strong>${fmt(value,1)} / ${fmt(target,0)} ${unit}</strong></div><div class="progress"><div style="width:${pct}%"></div></div></div>`;
+      }).join('');
+    }
+
+    function renderInsight(item) {
+      const base = summary('balanced');
+      const delta = item.weekly_cost_eur - base.weekly_cost_eur;
+      const frontier130 = DATA.frontier[0];
+      const frontier210 = DATA.frontier[DATA.frontier.length-1];
+      let lead;
+      if (item.scenario === 'balanced') lead = `The balanced model reaches a proven minimum basket cost of <strong>${euro.format(item.weekly_cost_eur)}</strong>. It uses ${item.unique_foods} foods rather than solving the nutrition constraints with a narrow, repetitive basket.`;
+      else lead = `${item.scenario_label} changes illustrative weekly cost by <strong>${delta >= 0 ? '+' : '−'}${euro.format(Math.abs(delta))}</strong> versus the balanced case.`;
+      document.getElementById('scenario-insight').innerHTML = `<p>${lead}</p><p>Across the controlled protein frontier, moving from 130 g to 210 g raises the basket cost by <strong>${euro.format(frontier210.weekly_cost_eur-frontier130.weekly_cost_eur)}</strong> per week. This is a model result from the same price catalogue—not a claim about every real shopping basket.</p><p><strong>Solver check:</strong> the weekly cost model reached a ${fmt(item.solver_mip_gap*100,1)}% optimality gap.</p>`;
+    }
+
+    function renderSchedule(item) {
+      const plan = DATA.plan.filter(d => d.scenario === active);
+      const daily = DATA.daily.filter(d => d.scenario === active).sort((a,b) => a.day_number-b.day_number);
+      document.getElementById('schedule').innerHTML = daily.map(day => {
+        const foods = plan.filter(d => d.day === day.day);
+        const groups = slots.map(slot => {
+          const items = foods.filter(f => f.meal_slot === slot);
+          if (!items.length) return '';
+          return `<div class="meal-group"><div class="meal-label">${slot}</div>${items.map(f => `<div class="food">${f.food_name}${f.servings>1?` ×${f.servings}`:''} <span>· ${f.serving_description}</span></div>`).join('')}</div>`;
+        }).join('');
+        return `<article class="card day-card"><h3>${day.day}</h3><div class="day-stats">€${fmt(day.cost_eur,2)} · ${fmt(day.kcal)} kcal · ${fmt(day.protein_g)} g protein</div>${groups}</article>`;
+      }).join('');
+    }
+
+    function renderGrocery(item) {
+      const rows = DATA.grocery.filter(d => d.scenario === active).sort((a,b) => b.weekly_cost_eur-a.weekly_cost_eur);
+      document.getElementById('grocery-body').innerHTML = rows.map(row => `<tr><td>${row.food_name}</td><td>${row.category}</td><td class="num">${row.servings}</td><td class="num">${euro.format(row.weekly_cost_eur)}</td><td class="num">${fmt(row.weekly_cost_eur/item.weekly_cost_eur*100,1)}%</td></tr>`).join('');
+    }
+
+    function render() {
+      const item = summary(active);
+      document.querySelectorAll('#scenario-tabs button').forEach(button => button.setAttribute('aria-selected', button.dataset.key === active));
+      document.getElementById('scenario-description').textContent = item.description;
+      document.getElementById('kpi-cost').textContent = euro.format(item.weekly_cost_eur);
+      document.getElementById('kpi-cost-context').textContent = `${euro.format(item.average_daily_cost_eur)} per day`;
+      document.getElementById('kpi-protein').textContent = `${fmt(item.average_protein_g,1)} g`;
+      document.getElementById('kpi-protein-context').textContent = `${fmt(item.target_protein_min_g)} g model floor`;
+      document.getElementById('kpi-prep').textContent = `${fmt(item.average_prep_minutes,1)} min`;
+      document.getElementById('kpi-prep-context').textContent = 'average active prep per day';
+      document.getElementById('kpi-variety').textContent = item.unique_foods;
+      renderCostBars(); renderFrontier(); renderNutrition(item); renderInsight(item); renderSchedule(item); renderGrocery(item);
+    }
+
+    setupTabs(); render();
+  </script>
+</body>
+</html>
+

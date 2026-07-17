@@ -1,0 +1,2 @@
+"""Protein Thinking optimisation package."""
+

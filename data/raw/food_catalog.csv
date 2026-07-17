@@ -1,0 +1,31 @@
+food_id,food_name,category,meal_slot,serving_description,serving_g,price_eur,kcal,protein_g,carbs_g,fat_g,fibre_g,prep_minutes,max_servings_day,max_servings_week,breakfast_anchor,dinner_protein,carb_base,produce,supplement,fish,red_meat,vegetarian,assumption_note
+oats,Oats,grain,breakfast,80 g dry,80,0.24,300,10.0,48.0,6.0,8.0,6,1,5,1,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+milk,Semi-skimmed milk,dairy,breakfast,300 ml,300,0.38,141,10.2,14.7,4.5,0.0,1,2,9,1,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,300,1.05,177,30.0,10.8,0.6,0.0,1,1,4,1,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+banana,Banana,fruit,breakfast,1 medium,120,0.30,105,1.3,27.0,0.4,3.1,1,2,7,1,0,0,1,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+peanut_butter,Peanut butter,spread,breakfast,30 g,30,0.20,184,7.5,4.2,15.5,2.1,1,1,5,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+eggs,Eggs,protein,breakfast,2 eggs,120,0.60,172,15.0,1.2,12.0,0.0,8,1,5,1,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,80,0.28,180,7.0,32.0,2.2,6.0,1,2,8,1,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+tuna,Canned tuna,fish,lunch,1 drained can,145,1.45,167,36.0,0.0,1.3,0.0,2,1,3,0,0,0,0,0,1,0,0,Illustrative Dutch retail price; typical label nutrition
+wraps,Wholegrain wraps,grain,lunch,2 wraps,120,0.80,320,10.0,52.0,7.0,8.0,2,1,4,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+cottage_cheese,Cottage cheese,dairy,lunch,250 g,250,1.25,210,30.0,8.0,6.0,0.0,1,1,4,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+chickpeas,Chickpeas,legume,lunch,240 g drained,240,0.85,310,17.0,42.0,6.0,17.0,3,1,3,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+kidney_beans,Kidney beans,legume,lunch,240 g drained,240,0.80,300,20.0,42.0,2.0,17.0,3,1,3,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+hummus,Hummus,spread,lunch,100 g,100,0.65,260,7.9,14.0,19.0,6.0,1,1,3,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+salad_veg,Salad vegetables,vegetable,lunch,250 g,250,0.90,80,4.0,14.0,1.0,6.0,6,1,5,0,0,0,1,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+chicken_breast,Chicken breast,meat,dinner,200 g raw,200,2.50,330,62.0,0.0,7.2,0.0,18,1,4,0,1,0,0,0,0,0,0,Illustrative Dutch retail price; typical label nutrition
+beef_mince,Lean beef mince,meat,dinner,200 g raw,200,2.60,340,42.0,0.0,18.0,0.0,15,1,2,0,1,0,0,0,0,1,0,Illustrative Dutch retail price; typical label nutrition
+chicken_thighs,Chicken thighs,meat,dinner,250 g raw,250,2.00,440,47.0,0.0,26.0,0.0,18,1,3,0,1,0,0,0,0,0,0,Illustrative Dutch retail price; typical label nutrition
+salmon,Salmon fillet,fish,dinner,180 g raw,180,3.60,374,40.0,0.0,24.0,0.0,15,1,2,0,1,0,0,0,1,0,0,Illustrative Dutch retail price; typical label nutrition
+tofu,Firm tofu,plant protein,dinner,250 g,250,1.50,300,31.0,5.0,18.0,5.0,10,1,3,0,1,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+rice,Rice,grain,dinner,100 g dry,100,0.22,360,7.0,79.0,0.7,1.3,12,2,8,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+pasta,Pasta,grain,dinner,100 g dry,100,0.20,350,12.0,71.0,1.5,3.0,12,2,7,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+potatoes,Potatoes,starch,dinner,400 g,400,0.60,308,8.0,68.0,0.4,8.8,12,1,4,0,0,1,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+mixed_veg,Frozen mixed vegetables,vegetable,dinner,300 g,300,0.75,180,9.0,27.0,1.5,15.0,8,1,7,0,0,0,1,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+olive_oil,Olive oil,oil,dinner,15 ml,14,0.18,119,0.0,0.0,13.5,0.0,1,2,10,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+whey,Whey protein,supplement,snack,30 g scoop,30,0.75,120,24.0,3.0,2.0,0.0,1,1,7,0,0,0,0,1,0,0,1,Illustrative Dutch retail price; typical label nutrition
+skyr,Skyr,dairy,snack,450 g tub,450,1.60,270,45.0,18.0,0.9,0.0,1,1,4,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+apple,Apple,fruit,snack,1 medium,180,0.40,95,0.5,25.0,0.3,4.4,1,2,7,0,0,0,1,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+mixed_nuts,Mixed nuts,nuts,snack,30 g,30,0.45,180,6.0,6.0,15.0,3.0,1,1,4,0,0,0,0,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+carrots,Carrots,vegetable,snack,200 g,200,0.30,82,1.8,19.0,0.5,5.6,3,2,8,0,0,0,1,0,0,0,1,Illustrative Dutch retail price; typical label nutrition
+

@@ -1,0 +1,75 @@
+scenario,scenario_label,food_id,food_name,category,servings,weekly_cost_eur
+balanced,Balanced,chicken_thighs,Chicken thighs,meat,3,6.0
+balanced,Balanced,whey,Whey protein,supplement,7,5.25
+balanced,Balanced,milk,Semi-skimmed milk,dairy,9,3.42
+balanced,Balanced,skyr,Skyr,dairy,2,3.2
+balanced,Balanced,tofu,Firm tofu,plant protein,2,3.0
+balanced,Balanced,beef_mince,Lean beef mince,meat,1,2.6
+balanced,Balanced,chicken_breast,Chicken breast,meat,1,2.5
+balanced,Balanced,kidney_beans,Kidney beans,legume,3,2.4
+balanced,Balanced,eggs,Eggs,protein,4,2.4
+balanced,Balanced,wholegrain_bread,Wholegrain bread,grain,8,2.24
+balanced,Balanced,banana,Banana,fruit,7,2.1
+balanced,Balanced,carrots,Carrots,vegetable,7,2.1
+balanced,Balanced,greek_yogurt,Greek yogurt 0%,dairy,2,2.1
+balanced,Balanced,pasta,Pasta,grain,7,1.4
+balanced,Balanced,oats,Oats,grain,5,1.2
+balanced,Balanced,rice,Rice,grain,5,1.1
+balanced,Balanced,peanut_butter,Peanut butter,spread,5,1.0
+balanced,Balanced,olive_oil,Olive oil,oil,2,0.36
+budget,Budget cut,chicken_thighs,Chicken thighs,meat,3,6.0
+budget,Budget cut,whey,Whey protein,supplement,7,5.25
+budget,Budget cut,greek_yogurt,Greek yogurt 0%,dairy,3,3.15
+budget,Budget cut,milk,Semi-skimmed milk,dairy,8,3.04
+budget,Budget cut,tofu,Firm tofu,plant protein,2,3.0
+budget,Budget cut,beef_mince,Lean beef mince,meat,1,2.6
+budget,Budget cut,chicken_breast,Chicken breast,meat,1,2.5
+budget,Budget cut,carrots,Carrots,vegetable,8,2.4
+budget,Budget cut,eggs,Eggs,protein,4,2.4
+budget,Budget cut,wholegrain_bread,Wholegrain bread,grain,7,1.96
+budget,Budget cut,banana,Banana,fruit,6,1.8
+budget,Budget cut,rice,Rice,grain,8,1.76
+budget,Budget cut,skyr,Skyr,dairy,1,1.6
+budget,Budget cut,pasta,Pasta,grain,7,1.4
+budget,Budget cut,oats,Oats,grain,5,1.2
+budget,Budget cut,peanut_butter,Peanut butter,spread,5,1.0
+convenience,Convenience,skyr,Skyr,dairy,4,6.4
+convenience,Convenience,whey,Whey protein,supplement,7,5.25
+convenience,Convenience,tofu,Firm tofu,plant protein,3,4.5
+convenience,Convenience,chicken_thighs,Chicken thighs,meat,2,4.0
+convenience,Convenience,milk,Semi-skimmed milk,dairy,9,3.42
+convenience,Convenience,beef_mince,Lean beef mince,meat,1,2.6
+convenience,Convenience,chickpeas,Chickpeas,legume,3,2.55
+convenience,Convenience,chicken_breast,Chicken breast,meat,1,2.5
+convenience,Convenience,apple,Apple,fruit,6,2.4
+convenience,Convenience,kidney_beans,Kidney beans,legume,3,2.4
+convenience,Convenience,wholegrain_bread,Wholegrain bread,grain,8,2.24
+convenience,Convenience,banana,Banana,fruit,7,2.1
+convenience,Convenience,hummus,Hummus,spread,3,1.95
+convenience,Convenience,mixed_nuts,Mixed nuts,nuts,4,1.8
+convenience,Convenience,oats,Oats,grain,5,1.2
+convenience,Convenience,greek_yogurt,Greek yogurt 0%,dairy,1,1.05
+convenience,Convenience,peanut_butter,Peanut butter,spread,5,1.0
+convenience,Convenience,wraps,Wholegrain wraps,grain,1,0.8
+convenience,Convenience,pasta,Pasta,grain,3,0.6
+convenience,Convenience,olive_oil,Olive oil,oil,3,0.54
+convenience,Convenience,carrots,Carrots,vegetable,1,0.3
+high_protein,High protein,skyr,Skyr,dairy,4,6.4
+high_protein,High protein,chicken_thighs,Chicken thighs,meat,3,6.0
+high_protein,High protein,whey,Whey protein,supplement,7,5.25
+high_protein,High protein,chicken_breast,Chicken breast,meat,2,5.0
+high_protein,High protein,greek_yogurt,Greek yogurt 0%,dairy,4,4.2
+high_protein,High protein,milk,Semi-skimmed milk,dairy,9,3.42
+high_protein,High protein,eggs,Eggs,protein,5,3.0
+high_protein,High protein,beef_mince,Lean beef mince,meat,1,2.6
+high_protein,High protein,kidney_beans,Kidney beans,legume,3,2.4
+high_protein,High protein,wholegrain_bread,Wholegrain bread,grain,8,2.24
+high_protein,High protein,carrots,Carrots,vegetable,7,2.1
+high_protein,High protein,banana,Banana,fruit,7,2.1
+high_protein,High protein,tofu,Firm tofu,plant protein,1,1.5
+high_protein,High protein,pasta,Pasta,grain,7,1.4
+high_protein,High protein,rice,Rice,grain,6,1.32
+high_protein,High protein,oats,Oats,grain,5,1.2
+high_protein,High protein,peanut_butter,Peanut butter,spread,5,1.0
+high_protein,High protein,mixed_nuts,Mixed nuts,nuts,1,0.45
+high_protein,High protein,olive_oil,Olive oil,oil,1,0.18

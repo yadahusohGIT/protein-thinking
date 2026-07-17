@@ -1,0 +1,270 @@
+scenario,scenario_label,day_number,day,food_id,food_name,category,meal_slot,serving_description,servings,serving_g,cost_eur,prep_minutes,kcal,protein_g,carbs_g,fat_g,fibre_g
+balanced,Balanced,1,Monday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+balanced,Balanced,1,Monday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+balanced,Balanced,1,Monday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+balanced,Balanced,1,Monday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+balanced,Balanced,1,Monday,beef_mince,Lean beef mince,meat,dinner,200 g raw,1,200.0,2.6,15.0,340.0,42.0,0.0,18.0,0.0
+balanced,Balanced,1,Monday,rice,Rice,grain,dinner,100 g dry,2,200.0,0.44,24.0,720.0,14.0,158.0,1.4,2.6
+balanced,Balanced,1,Monday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,1,Monday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+balanced,Balanced,2,Tuesday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+balanced,Balanced,2,Tuesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+balanced,Balanced,2,Tuesday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+balanced,Balanced,2,Tuesday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+balanced,Balanced,2,Tuesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+balanced,Balanced,2,Tuesday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+balanced,Balanced,2,Tuesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+balanced,Balanced,2,Tuesday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+balanced,Balanced,2,Tuesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,2,Tuesday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+balanced,Balanced,3,Wednesday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+balanced,Balanced,3,Wednesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+balanced,Balanced,3,Wednesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+balanced,Balanced,3,Wednesday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+balanced,Balanced,3,Wednesday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+balanced,Balanced,3,Wednesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+balanced,Balanced,3,Wednesday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+balanced,Balanced,3,Wednesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,3,Wednesday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+balanced,Balanced,4,Thursday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+balanced,Balanced,4,Thursday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+balanced,Balanced,4,Thursday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+balanced,Balanced,4,Thursday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+balanced,Balanced,4,Thursday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+balanced,Balanced,4,Thursday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+balanced,Balanced,4,Thursday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+balanced,Balanced,4,Thursday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,5,Friday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+balanced,Balanced,5,Friday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+balanced,Balanced,5,Friday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+balanced,Balanced,5,Friday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+balanced,Balanced,5,Friday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+balanced,Balanced,5,Friday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+balanced,Balanced,5,Friday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+balanced,Balanced,5,Friday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+balanced,Balanced,5,Friday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,5,Friday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+balanced,Balanced,6,Saturday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+balanced,Balanced,6,Saturday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+balanced,Balanced,6,Saturday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+balanced,Balanced,6,Saturday,chicken_breast,Chicken breast,meat,dinner,200 g raw,1,200.0,2.5,18.0,330.0,62.0,0.0,7.2,0.0
+balanced,Balanced,6,Saturday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+balanced,Balanced,6,Saturday,olive_oil,Olive oil,oil,dinner,15 ml,2,28.0,0.36,2.0,238.0,0.0,0.0,27.0,0.0
+balanced,Balanced,6,Saturday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,6,Saturday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+balanced,Balanced,7,Sunday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+balanced,Balanced,7,Sunday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+balanced,Balanced,7,Sunday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+balanced,Balanced,7,Sunday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+balanced,Balanced,7,Sunday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+balanced,Balanced,7,Sunday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+balanced,Balanced,7,Sunday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+balanced,Balanced,7,Sunday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+balanced,Balanced,7,Sunday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+budget,Budget cut,1,Monday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+budget,Budget cut,1,Monday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+budget,Budget cut,1,Monday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+budget,Budget cut,1,Monday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,1,Monday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+budget,Budget cut,1,Monday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+budget,Budget cut,1,Monday,beef_mince,Lean beef mince,meat,dinner,200 g raw,1,200.0,2.6,15.0,340.0,42.0,0.0,18.0,0.0
+budget,Budget cut,1,Monday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+budget,Budget cut,1,Monday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+budget,Budget cut,1,Monday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,1,Monday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+budget,Budget cut,2,Tuesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+budget,Budget cut,2,Tuesday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+budget,Budget cut,2,Tuesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+budget,Budget cut,2,Tuesday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+budget,Budget cut,2,Tuesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+budget,Budget cut,2,Tuesday,rice,Rice,grain,dinner,100 g dry,2,200.0,0.44,24.0,720.0,14.0,158.0,1.4,2.6
+budget,Budget cut,2,Tuesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,2,Tuesday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+budget,Budget cut,3,Wednesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+budget,Budget cut,3,Wednesday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,3,Wednesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+budget,Budget cut,3,Wednesday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+budget,Budget cut,3,Wednesday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+budget,Budget cut,3,Wednesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+budget,Budget cut,3,Wednesday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+budget,Budget cut,3,Wednesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,3,Wednesday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+budget,Budget cut,4,Thursday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+budget,Budget cut,4,Thursday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,4,Thursday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+budget,Budget cut,4,Thursday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+budget,Budget cut,4,Thursday,rice,Rice,grain,dinner,100 g dry,2,200.0,0.44,24.0,720.0,14.0,158.0,1.4,2.6
+budget,Budget cut,4,Thursday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+budget,Budget cut,4,Thursday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,4,Thursday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+budget,Budget cut,4,Thursday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+budget,Budget cut,5,Friday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+budget,Budget cut,5,Friday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+budget,Budget cut,5,Friday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,5,Friday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+budget,Budget cut,5,Friday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+budget,Budget cut,5,Friday,chicken_breast,Chicken breast,meat,dinner,200 g raw,1,200.0,2.5,18.0,330.0,62.0,0.0,7.2,0.0
+budget,Budget cut,5,Friday,rice,Rice,grain,dinner,100 g dry,2,200.0,0.44,24.0,720.0,14.0,158.0,1.4,2.6
+budget,Budget cut,5,Friday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,5,Friday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+budget,Budget cut,6,Saturday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+budget,Budget cut,6,Saturday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+budget,Budget cut,6,Saturday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,6,Saturday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+budget,Budget cut,6,Saturday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+budget,Budget cut,6,Saturday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+budget,Budget cut,6,Saturday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+budget,Budget cut,6,Saturday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,6,Saturday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+budget,Budget cut,7,Sunday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+budget,Budget cut,7,Sunday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+budget,Budget cut,7,Sunday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+budget,Budget cut,7,Sunday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+budget,Budget cut,7,Sunday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+budget,Budget cut,7,Sunday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+budget,Budget cut,7,Sunday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+budget,Budget cut,7,Sunday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+budget,Budget cut,7,Sunday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+budget,Budget cut,7,Sunday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+budget,Budget cut,7,Sunday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+high_protein,High protein,1,Monday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+high_protein,High protein,1,Monday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+high_protein,High protein,1,Monday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+high_protein,High protein,1,Monday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+high_protein,High protein,1,Monday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+high_protein,High protein,1,Monday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+high_protein,High protein,1,Monday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+high_protein,High protein,1,Monday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+high_protein,High protein,1,Monday,olive_oil,Olive oil,oil,dinner,15 ml,1,14.0,0.18,1.0,119.0,0.0,0.0,13.5,0.0
+high_protein,High protein,1,Monday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,1,Monday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+high_protein,High protein,2,Tuesday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+high_protein,High protein,2,Tuesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+high_protein,High protein,2,Tuesday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+high_protein,High protein,2,Tuesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+high_protein,High protein,2,Tuesday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+high_protein,High protein,2,Tuesday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+high_protein,High protein,2,Tuesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+high_protein,High protein,2,Tuesday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+high_protein,High protein,2,Tuesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,2,Tuesday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+high_protein,High protein,2,Tuesday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+high_protein,High protein,3,Wednesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+high_protein,High protein,3,Wednesday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+high_protein,High protein,3,Wednesday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+high_protein,High protein,3,Wednesday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+high_protein,High protein,3,Wednesday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+high_protein,High protein,3,Wednesday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+high_protein,High protein,3,Wednesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,3,Wednesday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+high_protein,High protein,3,Wednesday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+high_protein,High protein,4,Thursday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+high_protein,High protein,4,Thursday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+high_protein,High protein,4,Thursday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+high_protein,High protein,4,Thursday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+high_protein,High protein,4,Thursday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+high_protein,High protein,4,Thursday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+high_protein,High protein,4,Thursday,chicken_breast,Chicken breast,meat,dinner,200 g raw,1,200.0,2.5,18.0,330.0,62.0,0.0,7.2,0.0
+high_protein,High protein,4,Thursday,rice,Rice,grain,dinner,100 g dry,1,100.0,0.22,12.0,360.0,7.0,79.0,0.7,1.3
+high_protein,High protein,4,Thursday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+high_protein,High protein,4,Thursday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,4,Thursday,carrots,Carrots,vegetable,snack,200 g,2,400.0,0.6,6.0,164.0,3.6,38.0,1.0,11.2
+high_protein,High protein,5,Friday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+high_protein,High protein,5,Friday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+high_protein,High protein,5,Friday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+high_protein,High protein,5,Friday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+high_protein,High protein,5,Friday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+high_protein,High protein,5,Friday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+high_protein,High protein,5,Friday,beef_mince,Lean beef mince,meat,dinner,200 g raw,1,200.0,2.6,15.0,340.0,42.0,0.0,18.0,0.0
+high_protein,High protein,5,Friday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+high_protein,High protein,5,Friday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,5,Friday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+high_protein,High protein,5,Friday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+high_protein,High protein,6,Saturday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+high_protein,High protein,6,Saturday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+high_protein,High protein,6,Saturday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+high_protein,High protein,6,Saturday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+high_protein,High protein,6,Saturday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+high_protein,High protein,6,Saturday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+high_protein,High protein,6,Saturday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+high_protein,High protein,6,Saturday,rice,Rice,grain,dinner,100 g dry,2,200.0,0.44,24.0,720.0,14.0,158.0,1.4,2.6
+high_protein,High protein,6,Saturday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,6,Saturday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+high_protein,High protein,7,Sunday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+high_protein,High protein,7,Sunday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+high_protein,High protein,7,Sunday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+high_protein,High protein,7,Sunday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+high_protein,High protein,7,Sunday,eggs,Eggs,protein,breakfast,2 eggs,1,120.0,0.6,8.0,172.0,15.0,1.2,12.0,0.0
+high_protein,High protein,7,Sunday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+high_protein,High protein,7,Sunday,chicken_breast,Chicken breast,meat,dinner,200 g raw,1,200.0,2.5,18.0,330.0,62.0,0.0,7.2,0.0
+high_protein,High protein,7,Sunday,pasta,Pasta,grain,dinner,100 g dry,2,200.0,0.4,24.0,700.0,24.0,142.0,3.0,6.0
+high_protein,High protein,7,Sunday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+high_protein,High protein,7,Sunday,mixed_nuts,Mixed nuts,nuts,snack,30 g,1,30.0,0.45,1.0,180.0,6.0,6.0,15.0,3.0
+convenience,Convenience,1,Monday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+convenience,Convenience,1,Monday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+convenience,Convenience,1,Monday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+convenience,Convenience,1,Monday,beef_mince,Lean beef mince,meat,dinner,200 g raw,1,200.0,2.6,15.0,340.0,42.0,0.0,18.0,0.0
+convenience,Convenience,1,Monday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+convenience,Convenience,1,Monday,olive_oil,Olive oil,oil,dinner,15 ml,1,14.0,0.18,1.0,119.0,0.0,0.0,13.5,0.0
+convenience,Convenience,1,Monday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,1,Monday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+convenience,Convenience,1,Monday,apple,Apple,fruit,snack,1 medium,2,360.0,0.8,2.0,190.0,1.0,50.0,0.6,8.8
+convenience,Convenience,1,Monday,mixed_nuts,Mixed nuts,nuts,snack,30 g,1,30.0,0.45,1.0,180.0,6.0,6.0,15.0,3.0
+convenience,Convenience,2,Tuesday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+convenience,Convenience,2,Tuesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+convenience,Convenience,2,Tuesday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+convenience,Convenience,2,Tuesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+convenience,Convenience,2,Tuesday,hummus,Hummus,spread,lunch,100 g,1,100.0,0.65,1.0,260.0,7.9,14.0,19.0,6.0
+convenience,Convenience,2,Tuesday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+convenience,Convenience,2,Tuesday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+convenience,Convenience,2,Tuesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,2,Tuesday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+convenience,Convenience,3,Wednesday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+convenience,Convenience,3,Wednesday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+convenience,Convenience,3,Wednesday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+convenience,Convenience,3,Wednesday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,1,80.0,0.28,1.0,180.0,7.0,32.0,2.2,6.0
+convenience,Convenience,3,Wednesday,chickpeas,Chickpeas,legume,lunch,240 g drained,1,240.0,0.85,3.0,310.0,17.0,42.0,6.0,17.0
+convenience,Convenience,3,Wednesday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+convenience,Convenience,3,Wednesday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+convenience,Convenience,3,Wednesday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,3,Wednesday,mixed_nuts,Mixed nuts,nuts,snack,30 g,1,30.0,0.45,1.0,180.0,6.0,6.0,15.0,3.0
+convenience,Convenience,4,Thursday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+convenience,Convenience,4,Thursday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,1,300.0,0.38,1.0,141.0,10.2,14.7,4.5,0.0
+convenience,Convenience,4,Thursday,banana,Banana,fruit,breakfast,1 medium,2,240.0,0.6,2.0,210.0,2.6,54.0,0.8,6.2
+convenience,Convenience,4,Thursday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+convenience,Convenience,4,Thursday,chickpeas,Chickpeas,legume,lunch,240 g drained,1,240.0,0.85,3.0,310.0,17.0,42.0,6.0,17.0
+convenience,Convenience,4,Thursday,hummus,Hummus,spread,lunch,100 g,1,100.0,0.65,1.0,260.0,7.9,14.0,19.0,6.0
+convenience,Convenience,4,Thursday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+convenience,Convenience,4,Thursday,olive_oil,Olive oil,oil,dinner,15 ml,1,14.0,0.18,1.0,119.0,0.0,0.0,13.5,0.0
+convenience,Convenience,4,Thursday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,4,Thursday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+convenience,Convenience,5,Friday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+convenience,Convenience,5,Friday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+convenience,Convenience,5,Friday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+convenience,Convenience,5,Friday,wraps,Wholegrain wraps,grain,lunch,2 wraps,1,120.0,0.8,2.0,320.0,10.0,52.0,7.0,8.0
+convenience,Convenience,5,Friday,hummus,Hummus,spread,lunch,100 g,1,100.0,0.65,1.0,260.0,7.9,14.0,19.0,6.0
+convenience,Convenience,5,Friday,chicken_breast,Chicken breast,meat,dinner,200 g raw,1,200.0,2.5,18.0,330.0,62.0,0.0,7.2,0.0
+convenience,Convenience,5,Friday,pasta,Pasta,grain,dinner,100 g dry,1,100.0,0.2,12.0,350.0,12.0,71.0,1.5,3.0
+convenience,Convenience,5,Friday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,5,Friday,apple,Apple,fruit,snack,1 medium,1,180.0,0.4,1.0,95.0,0.5,25.0,0.3,4.4
+convenience,Convenience,5,Friday,carrots,Carrots,vegetable,snack,200 g,1,200.0,0.3,3.0,82.0,1.8,19.0,0.5,5.6
+convenience,Convenience,6,Saturday,oats,Oats,grain,breakfast,80 g dry,1,80.0,0.24,6.0,300.0,10.0,48.0,6.0,8.0
+convenience,Convenience,6,Saturday,greek_yogurt,Greek yogurt 0%,dairy,breakfast,300 g,1,300.0,1.05,1.0,177.0,30.0,10.8,0.6,0.0
+convenience,Convenience,6,Saturday,peanut_butter,Peanut butter,spread,breakfast,30 g,1,30.0,0.2,1.0,184.0,7.5,4.2,15.5,2.1
+convenience,Convenience,6,Saturday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+convenience,Convenience,6,Saturday,chickpeas,Chickpeas,legume,lunch,240 g drained,1,240.0,0.85,3.0,310.0,17.0,42.0,6.0,17.0
+convenience,Convenience,6,Saturday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+convenience,Convenience,6,Saturday,tofu,Firm tofu,plant protein,dinner,250 g,1,250.0,1.5,10.0,300.0,31.0,5.0,18.0,5.0
+convenience,Convenience,6,Saturday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,6,Saturday,apple,Apple,fruit,snack,1 medium,2,360.0,0.8,2.0,190.0,1.0,50.0,0.6,8.8
+convenience,Convenience,6,Saturday,mixed_nuts,Mixed nuts,nuts,snack,30 g,1,30.0,0.45,1.0,180.0,6.0,6.0,15.0,3.0
+convenience,Convenience,7,Sunday,milk,Semi-skimmed milk,dairy,breakfast,300 ml,2,600.0,0.76,2.0,282.0,20.4,29.4,9.0,0.0
+convenience,Convenience,7,Sunday,banana,Banana,fruit,breakfast,1 medium,1,120.0,0.3,1.0,105.0,1.3,27.0,0.4,3.1
+convenience,Convenience,7,Sunday,wholegrain_bread,Wholegrain bread,grain,lunch,2 slices,2,160.0,0.56,2.0,360.0,14.0,64.0,4.4,12.0
+convenience,Convenience,7,Sunday,kidney_beans,Kidney beans,legume,lunch,240 g drained,1,240.0,0.8,3.0,300.0,20.0,42.0,2.0,17.0
+convenience,Convenience,7,Sunday,chicken_thighs,Chicken thighs,meat,dinner,250 g raw,1,250.0,2.0,18.0,440.0,47.0,0.0,26.0,0.0
+convenience,Convenience,7,Sunday,olive_oil,Olive oil,oil,dinner,15 ml,1,14.0,0.18,1.0,119.0,0.0,0.0,13.5,0.0
+convenience,Convenience,7,Sunday,whey,Whey protein,supplement,snack,30 g scoop,1,30.0,0.75,1.0,120.0,24.0,3.0,2.0,0.0
+convenience,Convenience,7,Sunday,skyr,Skyr,dairy,snack,450 g tub,1,450.0,1.6,1.0,270.0,45.0,18.0,0.9,0.0
+convenience,Convenience,7,Sunday,apple,Apple,fruit,snack,1 medium,1,180.0,0.4,1.0,95.0,0.5,25.0,0.3,4.4
+convenience,Convenience,7,Sunday,mixed_nuts,Mixed nuts,nuts,snack,30 g,1,30.0,0.45,1.0,180.0,6.0,6.0,15.0,3.0

@@ -1,4 +1,4 @@
-"""Scenario definitions for the meal-plan optimisation model."""
+"""Settings for the four meal-planning scenarios."""
 
 from __future__ import annotations
 
@@ -103,4 +103,3 @@ def protein_frontier_scenarios() -> list[Scenario]:
         )
         for protein in range(130, 211, 10)
     ]
-

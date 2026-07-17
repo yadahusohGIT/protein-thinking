@@ -1,4 +1,4 @@
-"""Regression tests for the optimisation model and generated outputs."""
+"""Checks for the optimiser's totals, constraints and daily schedule."""
 
 from __future__ import annotations
 

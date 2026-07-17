@@ -46,7 +46,7 @@ def build() -> Path:
             f"minutes per day and costs €{convenience.weekly_cost_eur:.2f}."
         ),
         nbf.v4.new_markdown_cell(
-            "## Context & Methods\n\n"
+            "## How the model works\n\n"
             "**Decision question:** What is the lowest-cost seven-day grocery basket that satisfies a "
             "chosen average nutrition target while remaining varied and practical?\n\n"
             "The analysis uses two mixed-integer stages. Stage 1 minimises basket cost subject to weekly "

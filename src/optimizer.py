@@ -77,7 +77,8 @@ def optimise_meal_plan(catalog: pd.DataFrame, scenario: Scenario) -> dict[str, p
     n_days = len(DAYS)
     n_foods = len(catalog)
 
-    # Stage 1: weekly cost minimisation.
+    # Each food has two integer variables: the number of weekly servings and a
+    # 0/1 selection flag. The flag lets the model enforce basket variety.
     n_stage_one_vars = n_foods * 2
     weekly_objective = np.zeros(n_stage_one_vars, dtype=float)
     weekly_lower = np.zeros(n_stage_one_vars, dtype=float)
@@ -105,6 +106,7 @@ def optimise_meal_plan(catalog: pd.DataFrame, scenario: Scenario) -> dict[str, p
     for food in range(n_foods):
         selected = n_foods + food
         cap = float(catalog.at[food, "max_servings_week"])
+        # A food is selected exactly when at least one serving is purchased.
         add_weekly({food: 1, selected: -cap}, ub=0)
         add_weekly({food: 1, selected: -1}, lb=0)
 
@@ -169,7 +171,8 @@ def optimise_meal_plan(catalog: pd.DataFrame, scenario: Scenario) -> dict[str, p
         raise RuntimeError(f"Scenario {scenario.key!r} did not solve: {weekly_result.message}")
     weekly_servings = np.rint(weekly_result.x[:n_foods]).astype(int)
 
-    # Stage 2: distribute the fixed basket while minimising daily variation.
+    # Stage 2 cannot change the shopping cost: it only spreads the fixed weekly
+    # quantities across seven days and reduces day-to-day variation.
     balance_metrics = {
         "kcal": scenario.calorie_target,
         "protein_g": scenario.protein_min_g,
@@ -249,8 +252,8 @@ def optimise_meal_plan(catalog: pd.DataFrame, scenario: Scenario) -> dict[str, p
             lb=scenario.min_daily_items,
             ub=scenario.max_daily_items + 3,
         )
-        # Broad guardrails prevent an even weekly basket from producing an
-        # implausibly extreme individual day.
+        # The main nutrition limits apply to the weekly average. These wider
+        # daily bounds stop the scheduler from creating an extreme single day.
         for nutrient, lb, ub in (
             ("kcal", scenario.calorie_target - 300, scenario.calorie_target + 300),
             ("protein_g", max(0, scenario.protein_min_g - 30), np.inf),

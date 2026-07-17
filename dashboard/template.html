@@ -145,9 +145,9 @@
 
   <main class="shell">
     <section class="hero">
-      <div class="eyebrow">Business Analytics · Operations Research</div>
-      <h1>How expensive is a protein target?</h1>
-      <p>A two-stage mixed-integer model finds the lowest-cost weekly grocery basket, then turns that basket into a practical seven-day schedule.</p>
+      <div class="eyebrow">Student analytics project</div>
+      <h1>A cheaper way to hit a protein target</h1>
+      <p>I built a two-stage optimisation model to choose a low-cost weekly food basket and spread it across seven days.</p>
       <div class="hero-meta">
         <span class="pill">Python + SciPy MILP</span>
         <span class="pill">29 food options</span>
@@ -156,11 +156,11 @@
       </div>
     </section>
 
-    <div class="notice"><strong>Portfolio-model assumption:</strong> prices are a versioned illustrative Dutch retail catalogue, not a live supermarket feed. Nutrition values are typical label values. Replace both before making a real purchasing or health decision.</div>
+    <div class="notice"><strong>Note:</strong> I used example grocery prices and typical nutrition labels. This is a model demonstration, not a live supermarket comparison or a personal diet plan.</div>
 
     <section aria-labelledby="decision-title">
       <div class="section-head">
-        <div><div class="eyebrow">Decision view</div><h2 id="decision-title">Compare planning priorities</h2></div>
+        <div><div class="eyebrow">Scenarios</div><h2 id="decision-title">Compare the four versions</h2></div>
         <p id="scenario-description"></p>
       </div>
       <div class="scenario-tabs" id="scenario-tabs" role="tablist" aria-label="Meal-plan scenario"></div>
@@ -191,8 +191,8 @@
           <div class="nutrition-list" id="nutrition-list"></div>
         </article>
         <article class="card panel">
-          <h3>What changes in this scenario?</h3>
-          <p class="subtitle">Decision implication relative to the balanced baseline</p>
+          <h3>Compared with the balanced version</h3>
+          <p class="subtitle">How changing the constraints affects the result</p>
           <div id="scenario-insight"></div>
         </article>
       </div>
@@ -200,16 +200,16 @@
 
     <section aria-labelledby="schedule-title">
       <div class="section-head">
-        <div><div class="eyebrow">Stage 2</div><h2 id="schedule-title">Illustrative weekly schedule</h2></div>
-        <p>The scheduler keeps the optimised basket fixed and reduces day-to-day variation. Nutritional constraints are assessed on the weekly average.</p>
+        <div><div class="eyebrow">Daily split</div><h2 id="schedule-title">One way to arrange the week</h2></div>
+        <p>The basket stays fixed while the second model tries to keep the seven days reasonably even. The main targets apply to the weekly average.</p>
       </div>
       <div class="schedule" id="schedule"></div>
     </section>
 
     <section aria-labelledby="grocery-title">
       <div class="section-head">
-        <div><div class="eyebrow">Basket output</div><h2 id="grocery-title">Grocery list</h2></div>
-        <p>Foods are ranked by their contribution to weekly cost, making the model's purchasing logic easy to audit.</p>
+        <div><div class="eyebrow">Basket</div><h2 id="grocery-title">Grocery list</h2></div>
+        <p>Foods are sorted by how much they add to the weekly total.</p>
       </div>
       <article class="card panel table-wrap">
         <table>
@@ -220,16 +220,16 @@
     </section>
 
     <section aria-labelledby="method-title">
-      <div class="section-head"><div><div class="eyebrow">Method</div><h2 id="method-title">A transparent two-stage model</h2></div></div>
+      <div class="section-head"><div><div class="eyebrow">How it works</div><h2 id="method-title">Two separate decisions</h2></div></div>
       <div class="method-grid">
-        <article class="card method"><strong>1 · Optimise the basket</strong><p>Integer serving counts minimise weekly cost subject to energy, protein, fibre, fat, food-variety and frequency constraints.</p></article>
-        <article class="card method"><strong>2 · Schedule the basket</strong><p>A second integer model fixes the grocery basket and minimises daily deviation across nutrition and preparation time.</p></article>
-        <article class="card method"><strong>3 · Stress-test the decision</strong><p>Four scenarios and a nine-point protein frontier show how tighter constraints change cost, food mix and convenience.</p></article>
+        <article class="card method"><strong>1 · Choose what to buy</strong><p>The first model minimises weekly cost while meeting the nutrition, variety and preparation constraints.</p></article>
+        <article class="card method"><strong>2 · Split it between days</strong><p>The second model keeps the basket fixed and tries to make the seven days reasonably even.</p></article>
+        <article class="card method"><strong>3 · Change the assumptions</strong><p>The four scenarios and protein sensitivity test show what happens when the constraints become stricter.</p></article>
       </div>
     </section>
   </main>
 
-  <footer><div class="shell">Built as a Business Analytics portfolio case study. Not dietary or medical advice.</div></footer>
+  <footer><div class="shell">Personal Business Analytics project. The prices are examples, and the model is not dietary advice.</div></footer>
 
   <script>
     const DATA = __PROTEIN_THINKING_DATA__;
@@ -306,9 +306,9 @@
       const frontier130 = DATA.frontier[0];
       const frontier210 = DATA.frontier[DATA.frontier.length-1];
       let lead;
-      if (item.scenario === 'balanced') lead = `The balanced model reaches a proven minimum basket cost of <strong>${euro.format(item.weekly_cost_eur)}</strong>. It uses ${item.unique_foods} foods rather than solving the nutrition constraints with a narrow, repetitive basket.`;
+      if (item.scenario === 'balanced') lead = `The balanced basket costs <strong>${euro.format(item.weekly_cost_eur)}</strong> in the example data and uses ${item.unique_foods} different foods.`;
       else lead = `${item.scenario_label} changes illustrative weekly cost by <strong>${delta >= 0 ? '+' : '−'}${euro.format(Math.abs(delta))}</strong> versus the balanced case.`;
-      document.getElementById('scenario-insight').innerHTML = `<p>${lead}</p><p>Across the controlled protein frontier, moving from 130 g to 210 g raises the basket cost by <strong>${euro.format(frontier210.weekly_cost_eur-frontier130.weekly_cost_eur)}</strong> per week. This is a model result from the same price catalogue—not a claim about every real shopping basket.</p><p><strong>Solver check:</strong> the weekly cost model reached a ${fmt(item.solver_mip_gap*100,1)}% optimality gap.</p>`;
+      document.getElementById('scenario-insight').innerHTML = `<p>${lead}</p><p>Using the same example prices, moving from 130 g to 210 g of protein raises the weekly total by <strong>${euro.format(frontier210.weekly_cost_eur-frontier130.weekly_cost_eur)}</strong>.</p><p>The weekly basket solver finished with a ${fmt(item.solver_mip_gap*100,1)}% optimality gap.</p>`;
     }
 
     function renderSchedule(item) {
@@ -348,4 +348,3 @@
   </script>
 </body>
 </html>
-

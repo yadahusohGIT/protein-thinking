@@ -1,127 +1,79 @@
 # Protein Thinking
 
-**A cost-constrained student meal-planning optimiser built with Python, mixed-integer programming and SQL.**
+I built this project to practise optimisation on a problem I actually think about: eating enough protein without spending a ridiculous amount on food.
 
-After building a neighbourhood-ranking project, I wanted my second Business Analytics portfolio project to demonstrate a different kind of decision problem: optimisation under competing constraints.
+The model answers this question:
 
-The question is:
+> What is the cheapest weekly food basket that meets a set of nutrition, variety and cooking-time constraints?
 
-> What is the lowest-cost seven-day grocery basket that satisfies an average nutrition target while remaining varied and practical?
+My previous project compared Maastricht neighbourhoods using a scoring model. For this one, I wanted to do something different and use mixed-integer programming.
 
-The project uses a two-stage mixed-integer model. Stage 1 finds the minimum-cost weekly basket. Stage 2 keeps that basket fixed and arranges it across seven days while reducing variation in nutrition and preparation time.
+![Weekly basket cost by scenario](assets/scenario_costs.svg)
 
-![Illustrative weekly basket cost by scenario](assets/scenario_costs.svg)
+## Results
 
-## Headline findings
-
-Under the versioned illustrative catalogue:
-
-| Scenario | Weekly cost | Average protein | Average prep | Distinct foods |
+| Scenario | Weekly cost | Average protein | Average prep | Foods used |
 |---|---:|---:|---:|---:|
 | Budget cut | €41.06 | 150.0 g/day | 58.6 min/day | 16 |
 | Balanced | €44.37 | 160.1 g/day | 55.0 min/day | 18 |
 | Convenience | €49.60 | 160.4 g/day | 35.0 min/day | 21 |
 | High protein | €51.76 | 190.0 g/day | 59.6 min/day | 19 |
 
-The controlled protein sensitivity test shows a clear cost trade-off:
+In the protein sensitivity test, increasing the target from 130 g to 210 g per day raised the weekly cost from €37.78 to €57.54.
 
-- 130 g/day protein floor: **€37.78/week**
-- 160 g/day protein floor: **€44.37/week**
-- 210 g/day protein floor: **€57.54/week**
+![Cost at different protein targets](assets/protein_cost_frontier.svg)
 
-Within this model, moving from 130 g to 210 g adds **€19.76 per week**.
+The prices are example values, not live supermarket prices. The figures are useful for comparing how the model behaves, but they should not be read as the actual cost of groceries in the Netherlands.
 
-![Minimum weekly basket cost by protein floor](assets/protein_cost_frontier.svg)
+## How it works
 
-These are optimisation results from the same illustrative price catalogue. They are not claims about every real shopping basket.
+I split the problem into two parts.
 
-## What the project demonstrates
+### 1. Choose the weekly food basket
 
-- Mixed-integer linear programming with SciPy/HiGHS
-- A two-stage optimisation design separating purchasing from scheduling
-- Scenario and sensitivity analysis
-- Transparent KPI and constraint design
-- Python data pipelines and automated validation
-- SQL analysis through a reproducible SQLite database
-- An executed Jupyter notebook with embedded outputs
-- A responsive, self-contained interactive HTML dashboard
-- Honest documentation of assumptions and limitations
+The first model minimises total cost while meeting constraints for:
 
-## Interactive dashboard
+- calories;
+- protein, fibre and fat;
+- food variety;
+- preparation time;
+- fruit and vegetables;
+- carbohydrate and breakfast options; and
+- limits on individual foods, fish and red meat.
 
-The dashboard is in [`dashboard/index.html`](dashboard/index.html). It is self-contained: clone or download the repository and open that file directly in a browser.
+This is the part that decides what to buy. The solver reached a 0% optimality gap for each published scenario.
 
-It includes:
+### 2. Spread it across seven days
 
-- selectable balanced, budget, high-protein and convenience scenarios;
-- scenario cost comparison;
-- the nine-point protein-cost frontier;
-- average nutrition and preparation KPIs;
-- an illustrative seven-day schedule; and
-- an auditable grocery list ranked by cost contribution.
+The second model takes the chosen basket and divides it between Monday and Sunday. It tries to keep calories, protein, fibre, fat and preparation time reasonably even.
 
-## Model design
+The nutrition targets apply to the weekly average. The daily schedule is just one practical way of arranging the basket.
 
-### Stage 1: optimise the weekly basket
+More detail is available in [METHODOLOGY.md](METHODOLOGY.md).
 
-Integer serving counts minimise weekly cost subject to:
+## Dashboard
 
-- average calorie bounds;
-- minimum average protein and fibre;
-- average fat bounds;
-- an average preparation-time cap;
-- minimum food variety;
-- exactly seven dinner-protein servings;
-- at least four distinct dinner-protein choices;
-- breakfast, carbohydrate and produce coverage; and
-- weekly caps for each food, fish and red meat.
+[`dashboard/index.html`](dashboard/index.html) contains a self-contained dashboard. After downloading or cloning the repository, it can be opened directly in a browser.
 
-The basket optimiser reaches a **0% reported MIP gap** for all four portfolio scenarios.
+The scenario buttons update the cost, nutrition, grocery list and weekly schedule without needing a server or an internet connection.
 
-### Stage 2: schedule the fixed basket
-
-A second integer model allocates the purchased servings across Monday–Sunday. Its objective is to reduce daily deviation in energy, protein, fibre, fat and preparation time while respecting broad daily guardrails.
-
-The hard nutrition claims therefore apply to the **weekly average**. The day-level schedule is an illustrative arrangement, not a guarantee that every day independently reaches every weekly-average target.
-
-Full mathematical and scenario detail is in [METHODOLOGY.md](METHODOLOGY.md).
-
-## Data policy
-
-`data/raw/food_catalog.csv` contains 29 common foods with serving sizes, nutrition values, preparation assumptions and prices.
-
-The catalogue is deliberately labelled **illustrative**:
-
-- prices are representative Dutch retail assumptions, not a live supermarket feed;
-- nutrition values are typical label values, not a medical database;
-- package sizes, promotions and brands are not modelled; and
-- the catalogue must be replaced or verified before any real purchasing decision.
-
-This keeps the project reproducible without presenting synthetic precision as current market evidence.
-
-## Repository structure
+## Project files
 
 ```text
-protein-thinking/
-├── assets/                     # GitHub and LinkedIn charts
-├── dashboard/                  # Interactive self-contained dashboard
-├── data/
-│   ├── raw/food_catalog.csv    # Versioned illustrative inputs
-│   └── processed/              # Plans, summaries, sensitivity and SQLite DB
-├── notebooks/analysis.ipynb    # Executed reader-facing analysis
-├── sql/analysis_queries.sql    # Five business questions in SQL
-├── src/
-│   ├── config.py               # Scenario definitions
-│   ├── optimizer.py            # Two-stage MILP
-│   ├── run_analysis.py         # Output pipeline
-│   ├── build_dashboard.py      # Dashboard builder
-│   ├── build_notebook.py       # Notebook builder/executor
-│   ├── create_figures.py       # Reproducible charts
-│   └── validate_outputs.py     # Analytical validation
-└── tests/test_optimizer.py     # Model regression tests
+assets/                     Charts used in the README
+dashboard/                  Interactive dashboard
+data/raw/                   Example food catalogue
+data/processed/             Model outputs and SQLite database
+notebooks/analysis.ipynb    Executed analysis notebook
+sql/analysis_queries.sql    Example SQL analysis
+src/config.py               Scenario settings
+src/optimizer.py            Two-stage optimisation model
+src/run_analysis.py         Main data pipeline
+src/validate_outputs.py     Output checks
+tests/test_optimizer.py     Model tests
 ```
 
-## Run the project
+## Run it
 
 ```bash
 python -m venv .venv
@@ -138,29 +90,17 @@ python -m src.build_dashboard
 python -m src.create_figures
 python -m src.validate_outputs
 python -m unittest discover -s tests -v
-python -m src.build_notebook
 ```
 
-The generated SQLite database is `data/processed/protein_thinking.db`. The example queries in `sql/analysis_queries.sql` cover scenario comparison, cost concentration, protein sensitivity and schedule variation.
+The pipeline also creates `data/processed/protein_thinking.db`, which can be used with the queries in `sql/analysis_queries.sql`.
 
-## Validation status
+## Limitations
 
-- 4 model regression tests pass.
-- 26 analytical validation checks pass.
-- All four weekly basket problems report a 0% optimality gap.
-- The protein-cost frontier is monotonic across all nine tested thresholds.
-- The dashboard renders four scenarios, seven daily cards and nine sensitivity points without JavaScript errors in automated DOM checks.
-- The notebook contains five executed code cells and no error outputs.
+- The food prices are examples rather than current shop prices.
+- Nutrition values are typical label values and will differ by product.
+- The model does not account for allergies, taste, recipes or food waste.
+- The targets are model settings, not personal dietary advice.
+- Package sizes and discounts are not included.
 
-## Limitations and next steps
-
-The most useful next step is replacing the illustrative catalogue with timestamped, verified product observations from Dutch supermarkets. That would allow:
-
-- package-size and unit-price modelling;
-- store and promotion comparisons;
-- price refresh dates and change tracking;
-- a user-editable nutrition target; and
-- an uncertainty analysis for changing prices.
-
-The project is a decision-modelling demonstration, not dietary or medical advice.
+A useful next step would be collecting dated prices and nutrition labels for a smaller set of real products from Dutch supermarkets.
 
